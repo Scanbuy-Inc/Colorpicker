@@ -14,37 +14,6 @@ A multi format Colorpicker built with Svelte. The Colorpicker accepts and sets h
 * Viewport positional awareness - the colorpicker centers by default but will adapt and position itself appropriately based on available space.
 * Colorpicker renders outside the dom structure which prevents problems with overflow clipping in scrolling containers.
 
-### Installation
-
-1. Navigate to your project in the terminal.
-2. Run `yarn add @budibase/colorpicker`.
-3. Or use npm `npm i @budibase/colorpicker`.
-
-### Usage 
-```javascript
-import Colorpicker from "@budibase/colorpicker"
-
-<Colorpicker
-  //must be a valid color supported by Colorpicker (hsl(a), hex(a) or rgb(a))
-  value="#abc" 
-  //An array of 12 or less swatches for use in the Colorpicker panel.
-  swatches=["#abc2", "rgba(255,2,100,0.5)", "hsl(360,50,50)"] 
-  //disable swatches for the Colorpicker. Defaults to false
-  disableSwatches={true | false} 
-  //Open or close the Colorpicker. Defaults to false
-  open={true | false} 
-  //width of the Colorpreview. Defaults to 25px
-  width="25px" 
-  //height of the Colorpreview. Defaults to 25px
-  height="25px"
-  //change event - invoked when color has been selected
-  on:change={selectedColor => {}}
-  //remove swatch - invoked when swatch has been removed
-  on:removeswatch={removedSwatch => {})}
-  //add swatch event - invoked when a swatch has been added
-  on:addswatch={addedSwatch => {}}
-  />
-```
 ### Events
 The Colorpicker exposes the following events. In each case, the color will be provided as the first parameter to the bound function.
 
@@ -67,7 +36,21 @@ The remove swatch will be invoked when a user clicks the delete button that appe
 * An array of swatches can be passed to the Colorpicker to set up a dedicated panel of swatches. This will use provided swatches instead of locally stored swatches. Swatches added will still be saved to local storage.
 * You can disable swatch functionality by passing the `disableSwatches={true}` property to the Colorpicker.
 
+This is a readme for your new Budibase plugin.
 
+Find out more about [Budibase](https://github.com/Budibase/budibase).
+
+## Instructions
+
+To build your new  plugin run the following in your Budibase CLI:
+```
+budi plugins --build
+```
+
+You can also re-build everytime you make a change to your plugin with the command:
+```
+budi plugins --watch
+```
 
 
 
