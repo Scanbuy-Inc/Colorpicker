@@ -110,14 +110,19 @@
 <div className="color-preview-container">
   {#if !errorMsg}
     <CheckedBackground borderRadius="3px" backgroundSize="8px">
-      <div
+      <div class="container">
+        <div class="color-container" on:click={openColorpicker}>
+          <span>{value}</span>
+          <div
               bind:this={colorPreview}
               bind:clientHeight={previewHeight}
               bind:clientWidth={previewWidth}
               title={value}
               className="color-preview"
               style={previewStyle}
-              on:click={openColorpicker}/>
+              />
+        </div>
+      </div>
     </CheckedBackground>
 
     {#if open}
@@ -173,5 +178,24 @@
     left: 0;
     right: 0;
     z-index: 2;
+  }
+
+  .container{
+    width: 270.419px;
+    height: 40px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: white;
+    cursor: pointer;
+  }
+
+  .color-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 15px;
   }
 </style>
